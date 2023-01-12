@@ -13,4 +13,10 @@ export const manifest = defineManifest({
     service_worker: "src/background",
     type: "module",
   },
+  content_scripts: [
+    {
+      matches: ["<all_urls>"],
+      js: ["src/scripts/addOutline"],
+    },
+  ],
 });
