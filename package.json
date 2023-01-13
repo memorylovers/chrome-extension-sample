@@ -1,5 +1,6 @@
 {
   "name": "chrome-extension-sample",
+  "description": "sample for chrome extention",
   "private": true,
   "version": "0.0.0",
   "type": "module",
