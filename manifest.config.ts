@@ -11,19 +11,18 @@ export const manifest = defineManifest({
     "48": "icons/icon_48.png",
     "128": "icons/icon_128.png",
   },
-  permissions: ["tabs", "scripting"],
+  permissions: ["tabs"],
   action: {
     default_popup: "index.html",
   },
   background: {
-    service_worker: "src/background2",
+    service_worker: "src/background",
     type: "module",
   },
-  // content_scripts: [
-  //   {
-  //     matches: ["<all_urls>"],
-  //     js: ["src/scripts/addOutline"],
-  //   },
-  // ],
-  host_permissions: ["<all_urls>"],
+  content_scripts: [
+    {
+      matches: ["<all_urls>"],
+      js: ["src/scripts/addOutline", "src/scripts/addDummyView"],
+    },
+  ],
 });
