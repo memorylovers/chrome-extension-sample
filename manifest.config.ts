@@ -1,9 +1,9 @@
 import { defineManifest } from "@crxjs/vite-plugin";
 import pkg from "./package.json";
 
-export const manifest = defineManifest({
+export const manifest = defineManifest(async (env) => ({
   manifest_version: 3,
-  name: pkg.name,
+  name: env.mode == "production" ? pkg.name : `【DEV】 ${pkg.name}`,
   description: pkg.description,
   version: pkg.version,
   icons: {
@@ -26,4 +26,4 @@ export const manifest = defineManifest({
       js: ["src/scripts/addOutline", "src/scripts/addDummyView"],
     },
   ],
-});
+}));
