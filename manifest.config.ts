@@ -5,6 +5,12 @@ export const manifest = defineManifest({
   name: "chrome-extension-sample",
   description: "chrome-extension-sample",
   version: "0.0.1",
+  icons: {
+    "16": "icons/icon_16.png",
+    "32": "icons/icon_32.png",
+    "48": "icons/icon_48.png",
+    "128": "icons/icon_128.png",
+  },
   permissions: ["tabs", "scripting"],
   action: {
     default_popup: "index.html",
